@@ -1,7 +1,7 @@
 # sodb rbsp ebsp nalu 总结
 
 
-#yuv经过编码得到的原始数据就是SODB（String Of Data Bits）。SODB的bit长度不一定8的整数倍，所以需要填充rbsp_trailing_bits( )得到8bit整数倍的rbsp，其转换关系如下
+# yuv经过编码得到的原始数据就是SODB（String Of Data Bits）。SODB的bit长度不一定8的整数倍，所以需要填充rbsp_trailing_bits( )得到8bit整数倍的rbsp，其转换关系如下
 
 If the SODB is empty (i.e., zero bits in length), the RBSP is also empty.
 – Otherwise, the RBSP contains the SODB as follows:
@@ -14,9 +14,9 @@ iii) When the rbsp_stop_one_bit is not the last bit of a byte-aligned byte, one 
 3) One or more cabac_zero_word 16-bit syntax elements equal to 0x0000 may be present in some RBSPs after the
 rbsp_trailing_bits( ) at the end of the RBSP. 
 
-#而EBSP是在RBSP的基础上增加了防止竞争的0x03字节。
+# 而EBSP是在RBSP的基础上增加了防止竞争的0x03字节。
 
-#NALU（）是在ebsp的基础上增加了nal_unit_header( )的头。
+# NALU（）是在ebsp的基础上增加了nal_unit_header( )的头。
 |Byte stream NAL unit syntax|Descriptor|
  |  :- | :- | 
 nal_unit( NumBytesInNalUnit ) { | |	
