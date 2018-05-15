@@ -1,4 +1,4 @@
-#sodb rbsp ebsp nalu 总结
+# sodb rbsp ebsp nalu 总结
 
 
 #yuv经过编码得到的原始数据就是SODB（String Of Data Bits）。SODB的bit长度不一定8的整数倍，所以需要填充rbsp_trailing_bits( )得到8bit整数倍的rbsp，其转换关系如下
